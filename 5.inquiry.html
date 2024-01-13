@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+    <head>
+        <title>Inquiry</title>
+        <link rel="icon" type="image/x-icon" href="fevicon.jpg">
+        <link rel="stylesheet" href="MStyles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    </head>
+
+
+    <body>
+        <h1>Malcome Lismore Photography</h1>
+        <link rel="icon" type="image/x-icon" href="fevicon.png">
+        <p id="slogan">Capturing Moments, Preserving Memories</p>
+        <ul id="menu">
+          <li class="l1"><a class="a1" href="1.home.html">Home</a></li>
+          <li class="l1"><a class="a1" href="2.about.html">About</a></li>
+          <li class="l1"><a class="a1" href="3.prices.html">Prices</a></li>
+          <li class="l1"><a class="a1" href="4.gallery1.html">Gallery1</a></li>
+          <li class="l1"><a class="a1" href="4.gallery2.html">Gallery2</a></li>
+          <li class="l1"><a class="a1" href="4.gallery3.html">Gallery3</a></li>
+          <li class="l1"><a class="a1" href="4.gallery4.html">Gallery4</a></li>
+          <li class="l1"><a class="a1" href="5.inquiry.html">Inquiry</a></li>
+
+        </ul>
+        <!--<div class="menu-icon" onclick="toggleMenu()">
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+          </div>
+        
+          <div id="menu" class="menu-content">
+            <a href="1.home.html">Home</a>
+            <a href="2.about.html">About</a>
+            <a href="3.prices.html">Prices</a>
+            <a href="4.gallery1.html" title="Natural World Photography">Gallery 1</a>
+            <a href="4.gallery2.html" title="Wedding Photography">Gallery 2</a>
+            <a href="4.gallery3.html" title="Potraits">Gallery 3</a>
+            <a href="4.gallery4.html"  title="Special Events">Gallery 4</a>
+            <a href="4.gallery5.html">Gallery 5</a>
+            <a href="4.gallery6.html">Gallery 6 </a>
+            <a href="5.inquiry.html">Inquiry</a>
+
+          </div>-->
+        
+          <hr>
+          <br>
+
+          
+          <form action="action_page.php" target="_blank" method="post" autocomplete="on" novalidate>
+            <fieldset>
+              <legend><b>Inquire the Booking Possibility:</b></legend>
+            <label>1. Event:</label><br>
+            <input type="checkbox" id="wedding" name="wedding">
+            <label for="wedding">Wedding</label><br>
+            <input type="checkbox" id="BDP" name="birthday_party">
+            <label for="BPD">Birthday Party</label><br>
+            <input type="checkbox" id="graduation" name="graduation">
+            <label for="graduation">Graduation</label><br><br>
+            <label for="other">Other</label>
+            <input id="other" name="other" type="text"><br><br>
+
+            <label for="date">2. Date:</label>
+            <input type="datetime-local" name="date" id="date" min="2023-09-18" max="2023-12-18"><br><br>
+
+            <label for="location">3. Location:</label>
+            <input type="text" size="50" id="location" name="location" ><br><br>
+
+            <label for="l_type">4. Location Type:</label><br><br>
+            <select id="l_type" name="l_type">
+              <option value="Indoor">Indoor</option>
+              <option value="Outdoor" selected>Outdoor</option>
+              <option value="Both">Both</option>
+            </select><br><br>
+
+            <label for="name">5. Name:</label>
+            <input type="text" id="name" name="name" size="50" required><br><br>
+
+            <label>6. Contact Details:</label><br><br>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" ><br><br>
+
+            <label for="tel">Tel.</label>
+            <input type="tel" id="tel" name="tel" 
+             pattern="[0-9]{3}-[0-9]{7}" maxlength="10"><br><br>
+
+             <label for="whatsapp" >Whatsapp:</label>
+             <input type="tel" id="whatsapp" name="whatsapp"><br><br>
+            
+
+
+
+            <label>7. Your Prefered Contact Method:</label><br><br>
+            <input type="radio" id="whatsapp" name="contact_preference">
+            <label for="Whatsapp">Whatsapp</label>
+            <input type="radio" id="Email" name="contact_preference">
+            <label for="email">Email</label>
+            <input type="radio" id="voice_call" name="contact_preference">
+            <label for="voice_call">Voice Call</label><br><br>
+
+            <label for="other">7.Other Information:</label>
+            <input type="button" onclick="alert('Mention if you have extra information.')" value="Help"><br><br>
+            <textarea id= "other" name="comments" style="width: ; height: ;" 
+            rows="10" cols="30"></textarea><br><br>
+
+            <input type="submit" value="Submit" autofocus>
+            <input type="reset" value="Reset">
+          </fieldset>
+          
+          </form>
+          <br>
+          <hr>
+          <br>
+          <br>
+    </body>
+</html>
