@@ -326,6 +326,37 @@ blockquote span{
 
 
 
+
+/**************** About.html *************/
+.content {
+    max-height: 100vh;
+    box-sizing: border-box;
+    margin: 100px;
+}
+
+/************* end of About.html ***********/
+
+
+/**************** price.html *************/
+.priceContainer {
+    margin: 40px;
+    min-height: 100vh auto;
+    background-color: white;
+}
+
+td, th {
+ border: 2px ;
+ border-collapse:collapse;
+ border-radius: 10px;
+ border-style: solid;
+}
+th, td {
+ background-color: rgb(235, 224, 110);
+}
+/************* end of price.html ***********/
+
+
+
 /**************** gallery.html ***************/
 
 /* section three */
