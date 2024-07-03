@@ -29,7 +29,7 @@
                         <li><a href = "Home.html">Home</a></li>
                         <li><a href = "About.html">About</a></li>
                         <li><a href = "prices.html">Prices</a></li>
-                        <li><a href = "gallery.html" class = "active">Gallery</a></li>
+                        <li><a href = "gallery.php" class = "active">Gallery</a></li>
                         <li><a href = "blog.html">Blog</a></li>
                         <li><a href = "contact.html">Contact</a></li>
                     </ul>
@@ -76,86 +76,37 @@
         <section class = "section-three">
             <div class = "container">
                 <div class = "gallery">
-                    <a href = "images/MP8NW6_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/MP8NW6_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Coastal Birds</h3>
-                            </div>
-                        </div>
-                    </a>
+                    <?php
+                    // Assuming you have a database connection
+                    $dbConnection = mysqli_connect("localhost", "root", "anusara@2000", "photography");
 
-                    <a href = "images/MP3NW1_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/MP3NW1_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Coastal Birds</h3>
-                            </div>
-                        </div>
-                    </a>
+                    // Check connection
+                    if (!$dbConnection) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
-                    <a href = "images/MP6NW4_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/MP6NW4_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Scottish Landscapes</h3>
-                            </div>
-                        </div>
-                    </a>
+                    // Fetch image data from the database
+                    $query = "SELECT * FROM images";
+                    $result = mysqli_query($dbConnection, $query);
 
-                    <a href = "images/gallery4.jpg">
-                        <div class = "single-img">
-                            <img src = "images/gallery4.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Beautiful Work</h3>
-                            </div>
-                        </div>
-                    </a>
+                    // Loop through the results and display images
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $imagePath = $row['path'];
+                        $caption = $row['caption'];
 
-                    <a href = "images/Mp4NW2_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/Mp4NW2_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Wildlife</h3>
-                            </div>
-                        </div>
-                    </a>
+                        echo '<a href="' . $imagePath . '">';
+                        echo '<div class="single-img">';
+                        echo '<img src="' . $imagePath . '" alt="gallery image">';
+                        echo '<div class="single-img-content">';
+                        echo '<h3>' . $caption . '</h3>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</a>';
+                    }
 
-                    <a href = "images/gallery6.jpg">
-                        <div class = "single-img">
-                            <img src = "images/gallery6.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Beautiful Work</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href = "images/MP20P6_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/MP20P6_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Potraits</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href = "images/MP12WP4_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/MP12WP4_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Wedding Photography</h3>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href = "images/MP16P2_gallery.jpg">
-                        <div class = "single-img">
-                            <img src = "images/MP16P2_gallery.jpg" alt = "gallery image">
-                            <div class = "single-img-content">
-                                <h3>Potraits</h3>
-                            </div>
-                        </div>
-                    </a>
+                    // Close the database connection
+                    mysqli_close($dbConnection);
+                    ?>
                 </div>
             </div>
         </section>
